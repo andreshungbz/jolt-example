@@ -1,0 +1,11 @@
+bin
+build
+.vscode
+out.ll
+a.out
+todo
+/bazel-*
+.vs
+out.o
+out
+jolt/
