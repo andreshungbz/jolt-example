@@ -10,6 +10,10 @@ The dev container configuration uses `/.devcontainer/Dockerfile` to build the co
 
 The following `postCreateCommand` configured in `/.devcontainer/devcontainer.json` clones the Jolt repository (deleting it if it already exists), replaces the appropriate lines in the Makefile, and then runs `make` to build the Jolt compiler. The resulting binary is in the following path: `/jolt/bin/compiler`.
 
+```
+"postCreateCommand": "rm -rf jolt && git clone https://github.com/vasiltop/jolt && cd jolt && sed -i 's|llvm-config|llvm-config-16|g' Makefile && make"
+```
+
 ## Using the Jolt Compiler
 
 From the root repository, you can run the following, which gives you three files `out`, `out.ll`, and `out.o`:
